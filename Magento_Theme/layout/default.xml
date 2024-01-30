@@ -14,66 +14,16 @@
             <block name="wish-list-link-custom" template="Custom_Theme::link.phtml">
             </block>
         </referenceBlock>
-        <!-- <referenceBlock name="top.search" before="minicart" /> -->
-        <move element="minicart" destination="header-wrapper" after="top.search" />
-        
-        <!-- <move element="wish-list-link" destination="top.links" after="status-porudzbine"/> -->
-        <!-- <move element="authorization-link" destination="header-wrapper" as="custom.sign-in-link" /> -->
+
+
         <referenceContainer name="header-wrapper">
             <block class="Magento\Customer\Block\Account\AuthorizationLink" name="sign-in-link-custom"
-                   template="Magento_Customer::account/link/authorization.phtml"/>
+                   template="Magento_Customer::account/link/authorization.phtml" before="minicart" after="top.serach" />
         </referenceContainer>
+        
+        <move element="minicart" destination="header-wrapper" after="sign-in-link-custom" />
         <!-- <move element="top.search" destination="header-wrapper" before="authorization-link" /> -->
 
-        <!-- <referenceContainer name="footer">
-            <container name="custom-footer-up" htmlTag="div" htmlClass="custom-footer-up">
-                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer" before="-">
-                    <arguments>
-                        
-                        <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                    </arguments>
-                </block>
-                <container name="custom-footer-up-links" htmlTag="div" htmlClass="custom-footer-up-links">
-                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer3" before="-">
-                        <arguments>
-                            
-                            <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer5" before="-">
-                        <arguments>
-                            
-                            <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                        </arguments>
-                    </block>
-                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer6" before="-">
-                        <arguments>
-                            
-                            <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                        </arguments>
-                    </block>
-                    
-                </container>
-                <container name="custom-footer-up-socials" htmlTag="div" htmlClass="custom-footer-up-socials">
-                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer4" before="-">
-                        <arguments>
-                           
-                            <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
-                        </arguments>
-                    </block>
-                </container>
-                
-            </container>
-            <container name="custom-footer-down" htmlTag="div" htmlClass="custom-footer-down">
-                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.footer2" before="-">
-                    <arguments>
-                        <argument name="logo_width" xsi:type="string">135</argument>
-                    <argument name="logo_height" xsi:type="string">40</argument>
-                        
-                    </arguments>
-                </block>
-            </container>
-        </referenceContainer> -->
         
         <referenceBlock name="my-account-link" remove="true" />
         <referenceBlock name="wish-list-link" remove="true" />
@@ -82,7 +32,6 @@
         <referenceBlock name="store_language" remove="true" />
         <referenceBlock name="register-link" remove="true" />
         <referenceBlock name="advanced-search-link" remove="true" />
-        <!-- <referenceBlock name="minicart" remove="true" /> -->
 
         <!-- <referenceBlock name="footer_links" remove="true" /> -->
         <referenceBlock name="copyright" remove="true" />

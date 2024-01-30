@@ -91,7 +91,7 @@
         .switcher {
             border-top: 1px solid @color-gray82;
             font-size: 1.6rem;
-            font-weight: @font-weight__bold;
+            font-weight: @font-weight__regular;//@font-weight__bold;
             margin: 0;
             padding: .8rem 3.5rem .8rem 2rem;
 
@@ -170,7 +170,7 @@
                 .lib-css(color, @navigation-level0-item__color);
                 .lib-css(text-decoration, @navigation-level0-item__text-decoration);
                 display: block;
-                font-weight: @font-weight__bold;
+                font-weight: @font-weight__regular;
                 padding: .8rem @submenu__padding-left;
             }
 
@@ -301,6 +301,7 @@
     .nav-sections-item-content {
         > .navigation {
             display: block;
+            font-weight: 400;
         }
     }
 
